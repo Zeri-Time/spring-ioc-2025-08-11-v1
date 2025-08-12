@@ -17,7 +17,13 @@ public class ApplicationContext{
 
     }
 
-    public TestPostService genBean(String beanName) {
-        return testPostService;
+    public <T> T genBean(String beanName) {
+        if(beanName.equals("testPostRepository")){
+            return (T) testPostRepository;
+        }
+        else if(beanName.equals("testPostService")) {
+            return (T) testPostService;
+        }
+        return null;
     }
 }
