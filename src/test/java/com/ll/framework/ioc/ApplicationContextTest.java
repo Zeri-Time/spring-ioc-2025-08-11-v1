@@ -67,20 +67,20 @@ public class ApplicationContextTest {
         );
     }
 
-//    @Test
-//    @DisplayName("testFacadePostService has testPostService, testPostRepository")
-//    public void t6() {
-//        TestFacadePostService testFacadePostService = applicationContext
-//                .genBean("testFacadePostService");
-//
-//        assertThat(testFacadePostService).hasFieldOrPropertyWithValue(
-//                "testPostService",
-//                applicationContext.genBean("testPostService")
-//        );
-//
-//        assertThat(testFacadePostService).hasFieldOrPropertyWithValue(
-//                "testPostRepository",
-//                applicationContext.genBean("testPostRepository")
-//        );
-//    }
+    @Test
+    @DisplayName("testFacadePostService has testPostService, testPostRepository")
+    public void t6() {
+        TestFacadePostService testFacadePostService = applicationContext
+                .genBean("testFacadePostService");
+
+        assertThat(testFacadePostService).hasFieldOrPropertyWithValue(
+                "testPostService",
+                applicationContext.genBean("testPostService")
+        );
+
+        assertThat(testFacadePostService).hasFieldOrPropertyWithValue(
+                "testPostRepository",
+                applicationContext.genBean("testPostRepository")
+        );
+    }
 }

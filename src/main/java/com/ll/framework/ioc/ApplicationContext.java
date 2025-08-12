@@ -1,16 +1,19 @@
 package com.ll.framework.ioc;
 
 import com.ll.domain.testPost.testPost.repository.TestPostRepository;
+import com.ll.domain.testPost.testPost.service.TestFacadePostService;
 import com.ll.domain.testPost.testPost.service.TestPostService;
 
 public class ApplicationContext{
 
     private static TestPostRepository testPostRepository;
     private static TestPostService testPostService;
+    private static TestFacadePostService testFacadePostService;
 
     static {
         testPostRepository = new TestPostRepository();
         testPostService = new TestPostService(testPostRepository);
+        testFacadePostService = new TestFacadePostService(testPostService, testPostRepository);
     }
 
     public ApplicationContext() {
@@ -23,6 +26,9 @@ public class ApplicationContext{
         }
         else if(beanName.equals("testPostService")) {
             return (T) testPostService;
+        }
+        else if(beanName.equals("testFacadePostService")){
+            return (T) testFacadePostService ;
         }
         return null;
     }
