@@ -10,9 +10,9 @@ import java.util.Map;
 public class ApplicationContext {
     private final Map<String, Object> bean;
 
-    TestPostRepository testPostRepository = new TestPostRepository();
-    TestPostService testPostService = new TestPostService(testPostRepository);
-    TestFacadePostService testFacadePostService = new TestFacadePostService(testPostService, testPostRepository);
+    private final TestPostRepository testPostRepository = new TestPostRepository();
+    private final TestPostService testPostService = new TestPostService(testPostRepository);
+    private final TestFacadePostService testFacadePostService = new TestFacadePostService(testPostService, testPostRepository);
 
     public ApplicationContext() {
         this.bean = new HashMap<>();
