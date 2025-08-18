@@ -5,6 +5,6 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class TestFacadePostService {
-    private final TestPostService testPostService;
     private final TestPostRepository testPostRepository;
+    private final TestPostService testPostService;
 }
